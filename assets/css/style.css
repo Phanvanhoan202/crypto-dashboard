@@ -1,0 +1,635 @@
+/* =================== ROOT VARIABLES =================== */
+:root{
+    --color-white: #ffffff;
+    --color-light: #f0eff5;
+    --color-gray-light: #86848c;
+    --color-gray-dark: #56555e;
+    --color-primary: rgb(71, 7, 234);
+    --color-danger: rgb(255, 67, 54);
+    --color-success: rgb(34, 202, 75);
+    --color-warning: rgb(234, 181, 7);
+    --color-purple:rgb(160, 99, 245) ;
+    --color-dark: #27282f ;
+
+
+    --color-primary-light: rgba(71, 7, 234,0.2);
+    --color-danger-light: rgba(255, 67, 54,0.2);
+    --color-success-light: rgba(34, 202, 75,0.2);
+    --color-warning-light: rgba(234, 181, 7,0.2);
+    --color-purple-light:rgba(160, 99, 245,0.2);
+    --color-dark-light: rgba(0,0,0,0.2);
+
+
+    --card-padding: 1.6rem;
+    --padding-1:1rem;
+    --padding-2:8px;
+
+    --card-border-radius: 1.6rem;
+    --border-radius-1: 1rem;
+    --border-radius-2: 6px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+.dark-theme{
+    --color-white: #131316;
+    --color-light: #23232a;
+    --color-dark: #ddd;
+    --color-gray-dark: #acacb5;
+}
+
+html{
+    font-size: 12px;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background: var(--color-light);
+    min-height: 100vh;
+}
+img{
+    width: 100%;
+}
+h1{
+    font-size: 2.2rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+h3{
+    font-size:1.2rem ;
+}
+h4{
+    font-size:1rem ;
+}
+h5{
+    font-size: 0.86rem;
+    font-weight: 500;
+}
+h6{
+    font-size: 0.76rem;
+}
+p{
+    font-size: 0.86rem;
+    color: var(--color-gray-dark);
+}
+small{
+    font-size: 0.77rem;
+    font-weight: 300;
+}
+.text-muted{
+    color:var(--color-gray-light);
+}
+
+
+.primary{
+    color: var(--color-primary);
+}
+.success{
+    color: var(--color-success);
+}
+.warning{
+    color: var(--color-warning);
+}
+.danger{
+    color: var(--color-danger)
+}
+.dark{
+    color: var(--color-dark);
+}
+.purple{
+    color: var(--color-purple);
+}
+button{
+    cursor: pointer;
+}
+
+.bg-primary{
+    background:  var(--color-primary);
+    box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
+}
+.bg-success{
+    background:  var(--color-success);
+    box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
+}
+.bg-warning{
+    background:  var(--color-warning);
+    box-shadow: 0 0.8rem 0.8rem var(--color-warning-light);
+}
+.bg-danger{
+    background:  var(--color-danger);
+    box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
+}
+.bg-dark{
+    background:  #27282f;
+    box-shadow: 0 0.8rem 0.8rem var(--color-dark-light);
+}
+.bg-purple{
+    background: var(--color-purple);    
+    box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
+}
+
+.bg-primary-light{
+    background:  var(--color-primary-light);
+}
+.bg-success-light{
+    background:  var(--color-success-light);
+}
+.bg-warning-light{
+    background:  var(--color-warning-light);
+}
+.bg-danger-light{
+    background:  var(--color-danger-light)
+}
+.bg-dark-light{
+    background:  var(--color-dark-light);
+}
+.bg-purple-light{
+    background: var(--color-purple-light);    
+}
+
+/* =============== NAV ============== */
+nav{
+    background: var(--color-white);
+    padding: 1rem 0;
+    width: 100%;
+}
+nav .container{
+    width: 96%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+nav .container .logo{
+    width: 7rem;
+    cursor: pointer;
+}
+nav .container .search-bar{
+    background: var(--color-light);
+    border-radius: var(--border-radius-2);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: var(--padding-2) var(--card-padding);
+    color: var(--color-gray-light);
+    position: absolute;
+    left: 15%;
+    width: 32vw;
+}
+nav .container .search-bar input[type="search"]{
+    background: transparent;
+    color: var(--color-dark);
+    width: 100%;
+}
+nav .search-bar input[type="search"]::placeholder{
+    color: var(--color-gray-dark);
+}
+
+nav .container .profile-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+nav .container .profile-area .menu-btn{
+    display: none;
+}
+nav .container .profile-area .theme-btn{
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    background: var(--color-light);
+    border-radius: var(--border-radius-2);
+    align-items: center;
+    cursor: pointer;
+}
+nav .profile-area .theme-btn span{
+    width: 50%;
+    height: 100%;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .profile-area .theme-btn span.active{
+    background: var(--color-dark);
+    color: var(--color-white);
+    border-radius: var(--border-radius-2);
+}
+
+nav .container .profile-area .profile{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+nav .container .profile-area .profile .profile-photo{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+}
+
+/* ==================== MAIN ==================== */
+main{
+    width: 96%;
+    display: grid;
+    grid-template-columns: 16rem auto 28rem;
+    margin: 1rem auto 4rem;
+    gap: 2rem;
+}
+
+    /* ----------- Aside ----------- */
+main aside{
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+main aside button.close-btn{
+    display: none;
+}
+main aside .sidebar a{
+    display: flex;
+    height: 4.2rem;
+    align-items: center;
+    gap: 1.2rem;
+    color: var(--color-gray-light);
+    position: relative;
+}
+main aside .sidebar a.active{
+    color: var(--color-primary);
+    background: var(--color-white);
+}
+main aside .sidebar a.active::before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: var(--color-primary);
+}
+main aside .sidebar a span{
+    margin-left: 3rem;
+    transition: all 0.3s ease;
+    font-size: 1.7rem;
+}
+main aside .sidebar a h4{
+    font-weight:500;
+}
+main aside .sidebar a:hover{
+    color: var(--color-primary);
+}
+main aside .sidebar a:hover span{
+    margin-left: 2rem;
+}
+main aside .updates{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    text-align: center;
+}
+main aside .updates span{
+    font-size: 3rem;
+}
+main aside .updates h4{
+    margin: 1rem 0;
+}
+main aside .updates button{
+    color: white;
+    background: var(--color-primary);
+    border-radius: var(--border-radius-1);
+    width: 100%;
+    padding: 0.8rem 0;
+    margin-top: 2rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+    /* ----------- MIDDLE ----------- */
+main section.middle .header{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+main section.middle .header input[type="date"]{
+    padding: 0.5rem 2rem;
+    color: var(--color-gray-dark);
+    border-radius: var(--border-radius-2);
+}
+main section.middle .cards{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+}
+main section.middle .cards .card{
+    background: linear-gradient(rgb(255, 121, 111), rgb(189, 38, 27));
+    height: 16rem;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 2rem 3rem var(--color-danger-light);
+    transition: all 0.3s ease 0s;
+}
+main section.middle .cards .card:nth-child(2){
+    background: linear-gradient(rgb(127, 129, 145), rgb(39, 40, 47));
+    box-shadow: 0 2rem 3rem var(--color-dark-light);
+}
+main section.middle .cards .card:nth-child(3){
+    background: linear-gradient(rgb(93, 112, 255), rgb(87, 25, 194));
+    box-shadow: 0 2rem 3rem var(--color-primary-light);
+}
+main section.middle .cards .card:hover{
+    box-shadow: none;
+}
+main section.middle .card .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main section.middle .card .top .left {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+main section.middle .card .top img.right{
+    width: 3.5rem;
+}
+main section.middle .card .top .left img{
+    width: 2.3rem;
+    height: 2.3rem;
+    border: 1px solid var(--color-white);
+    border-radius: var(--border-radius-2);
+    padding: 0.4rem;
+}
+main section.middle .card .top .left h2{
+    font-weight: 200;
+    font-size: 1.4rem;
+}
+
+main section.middle .card .middle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main section.middle .card .middle img.chip{
+    width: 3.5rem;
+}
+main section.middle .card .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+main section.middle .card .bottom .right{
+    display: flex;
+    gap: 2rem;
+}
+/* ------------------ */
+
+main section.middle .monthly-report{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+/* -------------- */
+
+main section.middle .fast-payment{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.6rem;
+    align-items: flex-start;
+}
+main section.middle .fast-payment .badges{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+main section.middle .badges .badge{
+    display: flex;
+    gap: 1rem;
+    background: var(--color-white);
+    align-items: center;
+    padding: 0.6rem var(--padding-1);
+    border-radius: var(--border-radius-2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+main section.middle .badges .badge:hover{
+    box-shadow: 0 0 3rem var(--color-primary-light);
+}
+main section.middle .badge:first-child span{
+    font-size: 1.5rem;
+    display: flex;
+}
+main section.middle .badges .badge:nth-child(n + 2) span{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+main section.middle .badges .badge div{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+/*------------- END OF FAST-PAYMENT -------------*/
+
+canvas#chart{
+    border-radius: var(--card-border-radius);
+    background: var(--color-white);
+    padding: var(--card-padding);
+    margin-top: 2rem;
+    max-width: 100%;
+}
+
+/* ============= RIGHT ============= */
+main section.right .investments{
+    border-radius: var(--card-border-radius);
+    background: var(--color-white);
+
+}
+main section.right .investments .header{
+    display: flex;
+    justify-content: space-between;
+    padding: var(--card-padding);
+    padding-bottom: 0;
+}
+main section.right .investments .header a{
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+}
+main section.right .investments .investment{
+    padding: var(--card-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-light);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+main section.right .investments .investment:last-child{
+    border-bottom:none ;
+}
+main section.right .investments .investment:hover{
+    background: var(--color-light);
+}
+main section.right .investment img{
+    width: 2.4rem;
+}
+
+/* ----- END OF INVESTMENT -----  */
+
+
+main section.right .recent-transactions{
+    margin-top: 2rem;
+}
+main section.right .recent-transactions .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main section.right .recent-transactions .header a{
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+}
+main section.right .transaction{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--card-padding);
+    cursor: pointer;
+}
+main section.right .transaction:hover{
+    background: var(--color-white);
+    border-radius: var(--card-border-radius)
+}
+main section.right .transaction .service{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+main section.right .transaction .service .icon{
+    padding: var(--padding-2);
+    border-radius: var(--border-radius-1);
+    display: flex;
+    align-items: center;
+}
+main section.right .transaction .card-details{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+main section.right .transaction .card-details .card{
+    width: 4.6rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding: var(--padding-1);
+    border-radius: var(--border-radius-2);
+}
+
+
+ /* =========== MEDIA QUERIS FOR TABLET =========== */
+ @media screen and (max-width:1024px) {
+    nav .container .search-bar{
+        display: none;
+    }
+    nav .container .profile-area{
+        gap: 2rem;
+    }
+    nav .container .profile-area .menu-btn{
+        display: block;
+        background: transparent;
+        color: var(--color-dark);
+        cursor: pointer;
+    }
+    main{
+        grid-template-columns: 1fr;
+    }
+    main aside{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background: var(--color-white);
+        width: 22rem;
+        height: 100vh;
+        z-index: 5;
+        box-shadow: 2rem 0 2rem var(--color-primary-light);
+        transition: all 0.5s ease;
+    }
+    main aside button.close-btn{
+        display: inline-block;
+        position: absolute;
+        top:1rem;
+        right:1rem;
+        z-index: 4;
+        background: transparent;
+        width: 3rem;
+        height: 3rem;
+        color: var(--color-dark);
+        cursor: pointer;
+    }
+    main aside .sidebar{
+        margin-top: 4rem;
+    }
+    main aside .updates{
+        display: none;
+    }
+    main canvas#chart{
+        margin: 3rem 0 1rem;
+    }
+    main section.right .recent-transactions{
+        margin-top: 3rem;
+    }
+ }
+
+@media screen and (max-width:870px) {
+    main section.middle .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (min-width:1025px) and (max-width:1225px){
+    main{
+        grid-template-columns:16rem auto
+    }
+    main .right{
+        grid-column: 2/3;
+    }
+   
+}
+
+/* ============== MEDIA QUERI FOR MOBILE PHONE ============== */
+@media screen and (max-width: 600px) {
+    nav .container .profile-area .profile h5,
+    nav .container .profile-area .profile span{
+        display: none;
+    }
+    main section.middle .cards{
+        grid-template-columns: 1fr;
+    }
+    main section.middle .fast-payment{
+        flex-direction: column;
+        margin-top: 3rem;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
